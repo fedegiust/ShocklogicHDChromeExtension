@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" ng-app="shocklogicHDApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shocklogic Help Desk Google Chrome Extension</title>
+    <style>
+      body {
+        min-width: 357px;
+        overflow-x: hidden;
+      }
+
+      img {
+        margin: 5px;
+        border: 2px solid black;
+        vertical-align: middle;
+        width: 75px;
+        height: 75px;
+      }
+      #nooptions{
+        display: none;
+      }
+    </style>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+     <script type="text/javascript" src="js/angular.min.js"></script>
+  </head>
+  <body ng-controller="shocklogicHDCtrl">
+
+  <div id="nooptions">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">Shocklogic Helpdesk open tickets</div>
+      <div class="panel-body">
+        <p>You haven't configured the extension yet.<br />
+        To configure the extension:</p>
+        <ul>
+          <li>Go to chrome://extensions</li>
+          <li>Look for Shocklogic Help Desk Extension</li>
+          <li>Click on Options</li>
+          <li>On the new window, enter your Help Desk login details.</li>
+          <li>Click Save</li>
+        </ul>
+        <p>Once you've configured the extension you will be able to click on the icon and see the open tickets.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="helpdesktickets" class="panel panel-default">
+    <div class="panel-heading">Shocklogic Helpdesk open tickets</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Assigned</th>
+          <th>Contact</th>
+          <th>Status</th>
+          <th>Type</th>
+          <th>Open</th>
+          <th>Updated</th>
+        </tr>    
+      </thead>
+      <tbody>
+        <tr ng-repeat="ticket in tickets">
+          <td>{{ ticket.CasePK }}</td>
+          <td><a class="ticketUrl" href="https://helpdesk.shocklogic.com/code/casemodify.asp?ID={{ ticket.CasePK }}" target="_blank">{{ ticket.Title }}</a></td>
+          <td>{{ ticket.UserName }}</td>
+          <td>{{ ticket.FName }}</td>
+          <td>{{ ticket.ItemName }}</td>
+          <td>{{ ticket.CaseTypeName }}</td>
+          <td>{{ ticket.RaisedDate }}</td>
+          <td>{{ ticket.LastUpdate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </body>
+
+  <script type="text/javascript" src="js/controller.js"></script>
+
+</html>
+
