@@ -43,6 +43,10 @@ function saveOptions() {
 	var userName = document.getElementById("userName").value;
 	var userPassword = document.getElementById("userPassword").value;
 
+	document.getElementById('changes-saved').style.display = 'block';
+
+	var changessaved = setInterval(function(){ document.getElementById('changes-saved').style.display = 'none'; }, 2500);
+
 	// assign the values from the inputs into fields in localStorage
 	localStorage["userEmail"] = userEmail;
 	localStorage["userName"] = userName;

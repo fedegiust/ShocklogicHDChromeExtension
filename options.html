@@ -20,6 +20,9 @@
         #userEmail, #userName, #userPassword {
             width: 20%;
         }
+        #changes-saved{
+            display: none;
+        }
      </style>
 </head>
 <body>
@@ -34,7 +37,11 @@
                 <button type="button" id="btnsave" class="btn btn-default navbar-btn">Save</button>  <button type="button" id="btnrestore" class="btn btn-default navbar-btn">Restore default</button>
             </div>
         </div>
+        <div id="changes-saved" class="alert alert-success">
+            Well done! Your changes have been saved.
+        </div>
     </div>
+
 </body>
     <script type="text/javascript" src="js/options.js"></script>
 </html>

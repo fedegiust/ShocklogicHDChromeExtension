@@ -18,8 +18,11 @@
         width: 75px;
         height: 75px;
       }
-      #nooptions{
+      #nooptions, #notickets{
         display: none;
+      }
+      table {
+        font-size: 10pt;
       }
     </style>
 
@@ -53,6 +56,15 @@
     </div>
   </div>
 
+  <div id="notickets">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">Shocklogic Helpdesk open tickets</div>
+      <div class="panel-body">
+        <p>There are no Helpdesk ticket currently assigned to you.</p>
+      </div>
+    </div>
+  </div>
 
   <div id="helpdesktickets" class="panel panel-default">
     <div class="panel-heading">Shocklogic Helpdesk open tickets</div>
@@ -67,6 +79,7 @@
           <th>Type</th>
           <th>Open</th>
           <th>Updated</th>
+          <th>Upd By</th>
         </tr>    
       </thead>
       <tbody>
@@ -79,6 +92,7 @@
           <td>{{ ticket.CaseTypeName }}</td>
           <td>{{ ticket.RaisedDate }}</td>
           <td>{{ ticket.LastUpdate }}</td>
+          <td>{{ ticket.Last_Update_By }}</td>
         </tr>
       </tbody>
     </table>

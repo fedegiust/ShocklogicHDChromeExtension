@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Shocklogic Help Desk Extension",
   "description": "This extension shows the latest Help Desk Tickets.",
-  "version": "0.1",
+  "version": "0.2",
   "author": "Federico Giust",
     "options_page": "options.html",
   "permissions": [
